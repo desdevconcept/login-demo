@@ -1,0 +1,63 @@
+
+<head>
+  <meta charset="UTF-8">
+  <title>Login form Desdev</title>
+
+
+</head>
+
+<body>
+  {{#if currentUser}}
+  {{else}}
+    {{> register}}
+  {{/if}}
+  <br>
+  <div class="wrapper" id='wrapper_id'>
+    <form class="login" id='loginform_id'>
+
+    {{#if currentUser}}
+      <h1>Log In!</h1>
+      {{> log_out}}
+    {{else}}
+
+      {{> log_in}}
+
+    {{/if}}
+
+  </form>
+</div>
+
+
+</body>
+
+<template name="register">
+  <form>
+    <p class="title">Register</p>
+    <input type="text" id="username">
+    <input type="password" id="password">
+    <input type="submit" value="Register">
+  </form>
+</template>
+<template name="log_in">
+
+      <p class="title">Log in</p>
+      <input type="text" placeholder="Username" id="log_username" autofocus/>
+      <i class="fa fa-user"></i>
+      <input type="password" placeholder="Password" id="log_password" />
+      <i class="fa fa-key"></i>
+      <a href="#">Forgot your password?</a>
+      <button id="log_in_butt">
+        <i class="spinner"></i>
+        <span class="state" id="state_id">Log in</span>
+      </button>
+      <!--<input type="submit" value="Log In">-->
+
+</template>
+
+<template name="log_out">
+
+      <button id="log_in_butt">
+        <i class="spinner"></i>
+        <span class="state" id="state_id">Log Out</span>
+      </button>
+</template>
